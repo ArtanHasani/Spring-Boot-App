@@ -40,7 +40,7 @@
                     <a href="/custom" class=" btn btn-danger mt-2 text-light text-decoration-none" >Create a new Pizza from Custom Pizza</a>
                     <div class="col-md-12 col-sm-12 h-25">
                         <div class="row h-25 mt-4">
-                            <button th:disabled="${pizzas.isEmpty() == true}" class="col-md-4 border border-success" type="submit">Order</button>
+                            <button th:disabled="${pizzas.isEmpty() == true}" id="order_button" class="col-md-4 border border-success" type="submit">Order</button>
                         </div>
                         <div class="row h-25"></div>
                     </div>

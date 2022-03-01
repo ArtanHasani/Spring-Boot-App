@@ -1,10 +1,7 @@
 package webprogramming.project.model;
 
 import lombok.Data;
-
 import javax.persistence.*;
-import java.util.ArrayList;
-import java.util.List;
 
 @Data
 @Entity
@@ -17,7 +14,7 @@ public class Ingredients {
 
     private Double cost;
 
-    @ManyToOne
+    @ManyToOne(cascade = CascadeType.ALL)
     private Manufacturer manufacturer;
 
     public Ingredients() {
@@ -27,5 +24,21 @@ public class Ingredients {
         this.name = name;
         this.cost = cost;
         this.manufacturer = manufacturer;
+    }
+
+    public Long getId() {
+        return id;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public Double getCost() {
+        return cost;
+    }
+
+    public Manufacturer getManufacturer() {
+        return manufacturer;
     }
 }

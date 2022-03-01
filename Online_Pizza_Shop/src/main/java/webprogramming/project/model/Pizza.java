@@ -1,9 +1,7 @@
 package webprogramming.project.model;
 
 import lombok.Data;
-
 import javax.persistence.*;
-import java.util.ArrayList;
 import java.util.List;
 
 @Data
@@ -22,7 +20,7 @@ public class Pizza {
 
     private String url;
 
-    @ManyToMany
+    @ManyToMany(cascade = CascadeType.ALL)
     private List<Ingredients> ingredients;
 
     public Pizza() {
@@ -34,5 +32,29 @@ public class Pizza {
         this.cost = cost;
         this.url = url;
         this.ingredients = ingredients;
+    }
+
+    public Long getId() {
+        return id;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public String getSize() {
+        return size;
+    }
+
+    public Double getCost() {
+        return cost;
+    }
+
+    public String getUrl() {
+        return url;
+    }
+
+    public List<Ingredients> getIngredients() {
+        return ingredients;
     }
 }

@@ -3,12 +3,9 @@ package webprogramming.project.model;
 import lombok.Data;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
-
 import javax.persistence.*;
-import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Collections;
-import java.util.List;
 
 @Data
 @Entity
@@ -31,9 +28,6 @@ public class User implements UserDetails{
 
     @Enumerated(value = EnumType.STRING)
     private Role role;
-
-//    @OneToMany
-//    public List<Order> order;
 
     public User() {
     }
@@ -69,5 +63,27 @@ public class User implements UserDetails{
     @Override
     public boolean isEnabled() {
         return isEnabled;
+    }
+
+    @Override
+    public String getUsername() {
+        return username;
+    }
+
+    @Override
+    public String getPassword() {
+        return password;
+    }
+
+    public String getAddress() {
+        return address;
+    }
+
+    public String getCreditCardNumber() {
+        return creditCardNumber;
+    }
+
+    public Role getRole() {
+        return role;
     }
 }

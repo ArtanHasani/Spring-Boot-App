@@ -19,4 +19,6 @@ public class ProjectApplication {
     PasswordEncoder passwordEncoder() {
         return new BCryptPasswordEncoder(10);
     }
+
+
 }

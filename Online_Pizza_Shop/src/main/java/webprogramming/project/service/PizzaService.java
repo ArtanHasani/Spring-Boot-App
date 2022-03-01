@@ -20,6 +20,4 @@ public interface PizzaService {
     Optional<Pizza> getPizzaFromName(String pizzaName);
 
     double calculateCost(List<Long> ingredients, String pizzaSize);
-
-    boolean checkDiscount(User user, Order order);
 }

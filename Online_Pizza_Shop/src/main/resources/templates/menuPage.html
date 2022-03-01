@@ -1,5 +1,5 @@
 <div id="mainDiv" class="container col-sm-12 bg-secondary overflow-auto" xmlns:th="http://www.thymeleaf.org">
-    <div class="col-md-12 ">
+    <div id="pizzasInMenu" class="col-md-12 ">
         <div th:each="pizza : ${pizzas}">
             <form th:action="@{'/order/add/{id}' (id=${pizza.getId()}) }" method="POST" >
                 <div id="pizzasMenu" class="row cold-md-12 h-100 mt-5 bg-dark overflow-auto ">

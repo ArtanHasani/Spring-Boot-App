@@ -81,9 +81,4 @@ public class PizzaServiceImpl implements PizzaService {
         }
         return cost;
     }
-
-    @Override
-    public boolean checkDiscount(User user, Order order) {
-        return (order.getPizza().size() % 2 == 0 && order.getPizza().size() != 0);
-    }
 }

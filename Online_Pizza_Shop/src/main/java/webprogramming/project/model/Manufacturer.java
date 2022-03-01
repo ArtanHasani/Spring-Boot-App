@@ -1,10 +1,7 @@
 package webprogramming.project.model;
 
 import lombok.Data;
-
 import javax.persistence.*;
-import java.util.ArrayList;
-import java.util.List;
 
 @Data
 @Entity
@@ -23,5 +20,17 @@ public class Manufacturer {
     public Manufacturer(String name, String countryOfOrigin) {
         this.name = name;
         this.countryOfOrigin = countryOfOrigin;
+    }
+
+    public Long getId() {
+        return id;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public String getCountryOfOrigin() {
+        return countryOfOrigin;
     }
 }

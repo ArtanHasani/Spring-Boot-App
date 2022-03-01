@@ -34,13 +34,13 @@ public class AdminFunctionController {
     }
 
     @GetMapping("/addNewPizza")
-    public String getNewPizzaPage(Model model){ // To show the list of ingredients
+    public String getNewPizzaPage(Model model){
         List<Ingredients> ingredients = this.ingredientsService.findAll();
         model.addAttribute("ingredients", ingredients);
         model.addAttribute("bodyContent","addNewPizzaPage");
         return "master-template";
     }
-    @PostMapping("/addNewPizza") //To add a new Pizza
+    @PostMapping("/addNewPizza")
     public String savePizza(@RequestParam String newPizzaName,
                             @RequestParam List<Long> ingredientsList,
                             @RequestParam Double newPizzaCost,
